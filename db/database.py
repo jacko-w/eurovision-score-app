@@ -67,8 +67,6 @@ DB_USER = st.secrets["DB_USER"]
 DB_PASS = st.secrets["DB_PASS"]
 DB_NAME = st.secrets["DB_NAME"]
 
-# initialise connector
-connector = Connector()
 
 def get_conn():
     try:
@@ -85,5 +83,6 @@ def get_conn():
         raise e
 
 def db_connect() -> Engine:
+    connector = Connector()
     engine = create_engine("mysql+pymysql://", creator=get_conn,)
     return engine
