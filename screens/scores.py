@@ -10,7 +10,7 @@ import os
 
 def show(engine: Engine, user_id: str):
     cwd = os.getcwd()
-    path = os.path.join(cwd, 'visuals\\eurovision-2024-visual.jpg')
+    path = os.path.join(cwd, 'visuals', 'eurovision-2024-visual.jpg')
     st.image(path, use_column_width=True)
     user_id = user_id
     st.write(f"Welcome {user_id}!")
