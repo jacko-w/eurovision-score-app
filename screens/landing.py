@@ -101,7 +101,7 @@ def show(engine: Engine) -> None:
     """
     # current wd
     cwd = os.getcwd()
-    path = os.path.join(cwd, 'visuals\\eurovision-2024-visual.jpg')
+    path = os.path.join(cwd, 'visuals', 'eurovision-2024-visual.jpg')
     st.image(path, use_column_width=True)
 
     # check for user token
