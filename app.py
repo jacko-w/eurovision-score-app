@@ -18,8 +18,6 @@ def check_user_token() -> bool:
 def main() -> None:
     """Main function for the app."""
 
-    st.write(st.secrets["INSTANCE_CONNECTION_NAME"])
-
     # connect to database
     engine = db_connect()
 
