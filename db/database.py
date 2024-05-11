@@ -71,14 +71,18 @@ DB_NAME = st.secrets["DB_NAME"]
 connector = Connector()
 
 def get_conn():
-    conn = connector.connect(
-        INSTANCE_CONNECTION_NAME,
-        "pymysql",
-        user="DB_USER",
-        password="DB_PASS",
-        db="DB_NAME",
-    )
-    return conn
+    try:
+        conn = connector.connect(
+            "<INSTANCE_CONNECTION_NAME>",
+            "pymysql",
+            user="<DB_USER>",
+            password="<DB_PASS>",
+            db="<DB_NAME>"
+        )
+        return conn
+    except Exception as e:
+        logging.error("Failed to connect to the database", exc_info=True)
+        raise e
 
 def db_connect() -> Engine:
     engine = create_engine("mysql+pymysql://", creator=get_conn,)
